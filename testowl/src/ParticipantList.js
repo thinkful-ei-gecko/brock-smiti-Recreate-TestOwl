@@ -3,15 +3,27 @@ import Participant from './Participant';
 
 function ParticipantList(props) {
     console.log(props.participants);
+
+    const ParticipantList = props.participants.filter(participant => participant.inSession).map(participant => <Participant 
+        name = {participant.name}
+        avatar = {participant.avatar}
+        id = {participant.id}
+        inSession = {participant.inSession}
+        onStage = {participant.onStage}
+        />);
+
+    const NonParticipantList = props.participants.filter(participant => !participant.inSession).map(participant => <Participant 
+        name = {participant.name}
+        avatar = {participant.avatar}
+        id = {participant.id}
+        inSession = {participant.inSession}
+        onStage = {participant.onStage}
+        />);
+
   return (
     <div className="ParticipantList">
-        <Participant 
-        name = {props.participants[0].name}
-        avatar = {props.participants[0].avatar}
-        id = {props.participants[0].id}
-        inSession = {props.participants[0].inSession}
-        onStage = {props.participants[0].onStage}
-        />
+        {ParticipantList}
+        {NonParticipantList}
     </div>
   );
 }

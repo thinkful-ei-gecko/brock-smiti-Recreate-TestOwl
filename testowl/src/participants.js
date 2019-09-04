@@ -1,5 +1,3 @@
-
-
 const participants = [
     {
         id: 1,
