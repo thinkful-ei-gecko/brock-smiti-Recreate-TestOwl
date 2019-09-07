@@ -9,9 +9,10 @@ function App(props) {
     <div className="App">
       <ParticipantList 
       participants = {props.participants}/>
-      <ChatLog 
-      chatEvents = {props.chatEvents}/>
       <Stage 
+      participants = {props.participants}/>
+      <ChatLog 
+      chatEvents = {props.chatEvents}
       participants = {props.participants}/>
     </div>
   );

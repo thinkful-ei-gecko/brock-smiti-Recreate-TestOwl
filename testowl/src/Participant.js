@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Participant(props) {
-    console.log(props.participants);
+//console.log(props.participants);
   return (
     <div className="Participant">
         <p>{props.name}</p>
